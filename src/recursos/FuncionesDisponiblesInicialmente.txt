@@ -1,0 +1,2 @@
+Magumbo,Elefante Vengativo.,//home//sebas//NetBeansProjects//POLI_CINE//src//recursos//assets//img2.png,2,9-11 
+4 del Altiplano,El Origen de la cumbia.,//home//sebas//NetBeansProjects//POLI_CINE//src//recursos//assets//img1.png,2,11-13 

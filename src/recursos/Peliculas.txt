@@ -1,0 +1,2 @@
+Magumbo,Elefante vengativo,//home//sebas//NetBeansProjects//POLI_CINE//src//recursos//assets//img2.png
+4 del Altiplano,El origen,//home//sebas//NetBeansProjects//POLI_CINE//src//recursos//assets//img1.png
