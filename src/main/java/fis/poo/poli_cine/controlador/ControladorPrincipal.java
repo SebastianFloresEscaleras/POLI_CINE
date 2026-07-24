@@ -34,6 +34,11 @@ public class ControladorPrincipal {
     public void iniciarApp(){
         //prueba para ver que carga todo correctamente
         //cinegestor1.Imprimir();
+        vista1.setResizable(false);
+        vista3.setResizable(false);
+        vista4.setResizable(false);
+        vista5.setResizable(false);
+        
         
         vista1.recibirCineGestor(cinegestor1);
 
@@ -100,7 +105,7 @@ public class ControladorPrincipal {
             
             vista3.configuracionAlIniciarVentanaAsientos();
             
-            vista3.mostrarAsientosSeleccionados();
+            vista3.reseteadorDeColoresDeLosBotonesParaPoderInstanciarle();
             
             vista3.setVisible(true);
             

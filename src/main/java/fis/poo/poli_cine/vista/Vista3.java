@@ -34,6 +34,70 @@ public class Vista3 extends javax.swing.JFrame {
         
     }
     
+    public void reseteadorDeColoresDeLosBotonesParaPoderInstanciarle(){
+        java.awt.Color colorBase = jButton10.getBackground();
+        
+        for(Funcion i: cinegestor1.retornarListaFunciones()){
+            if(i==funcionEscogida){
+                for(Asiento eqwr: i.retornarSala().retornarListaAsientos()){
+                    
+                    
+                    if(eqwr.retornarClave().equals("A1")){
+                            jButton1.setBackground(colorBase);
+                        
+                    
+                    }
+                    
+                    if(eqwr.retornarClave().equals("B1")){
+                            jButton2.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("C1")){
+                            jButton3.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("A2")){
+                            jButton4.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("B2")){
+                            jButton5.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("C2")){
+                            jButton6.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("A3")){
+                            jButton9.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("B3")){
+                            jButton8.setBackground(colorBase);
+                        
+                    }
+                    
+                    if(eqwr.retornarClave().equals("C3")){
+                            jButton7.setBackground(colorBase);
+                        
+                    }
+                    
+                    
+                }
+            }
+        }
+    
+    }
+        
+    
+    
+    
     public void limpiarPantallaParaNuevoCiclo(){
     jTextField1.setText("");
     }
@@ -351,17 +415,22 @@ public class Vista3 extends javax.swing.JFrame {
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
         jButton4.setText("A2");
+        jButton4.addActionListener(this::jButton4ActionPerformed);
 
         jButton5.setText("B2");
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         jButton6.setText("C2");
+        jButton6.addActionListener(this::jButton6ActionPerformed);
 
         jButton7.setText("B3");
         jButton7.addActionListener(this::jButton7ActionPerformed);
 
         jButton8.setText("C3");
+        jButton8.addActionListener(this::jButton8ActionPerformed);
 
         jButton9.setText("A3");
+        jButton9.addActionListener(this::jButton9ActionPerformed);
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Noto Sans CJK KR Light", 0, 24)); // NOI18N
@@ -392,7 +461,7 @@ public class Vista3 extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 20, Short.MAX_VALUE))
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -418,7 +487,7 @@ public class Vista3 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton10)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
                             .addComponent(jTextField1)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -536,6 +605,32 @@ public class Vista3 extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("B3")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton7.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton7.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -603,6 +698,158 @@ public class Vista3 extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("A2")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton4.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton4.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("B2")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton5.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton5.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("C2")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton6.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton6.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("A3")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton9.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton9.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        java.awt.Color colorBase = jButton10.getBackground();
+                
+        for(Funcion a: cinegestor1.retornarListaFunciones()){
+            if(a==funcionEscogida){
+                
+                for(Asiento rr : a.retornarSala().retornarListaAsientos()){
+                    
+                    if(rr.retornarClave().equals("C3")){
+                        
+                        if(rr.retornarDisponibilidad()==true){
+                        jButton8.setBackground(Color.BLUE);
+                        rr.modificarDisponibilidad(false);
+                        //System.out.println("Asiento tomado");
+                        //System.out.print(rr.retornarDisponibilidad());
+                        }else{
+                        jButton8.setBackground(colorBase);
+                        rr.modificarDisponibilidad(true);
+                        //System.out.println("AsientoLiberado");
+                        //System.out.println(rr.retornarDisponibilidad());
+                        }
+                    }
+                }
+            }
+        
+        }
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
