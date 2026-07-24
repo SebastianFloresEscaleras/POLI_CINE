@@ -130,7 +130,8 @@ public class ControladorPrincipal {
         });
         
         vista3.listenerPasarAFacturacion((accion)->{
-        if(vista3.validarQueDebeHaberPorLoMenosUno()==true){
+            
+        if(vista3.validarQueDebeHaberPorLoMenosUno2()==true){
             vista4.recibirCineGestor(cinegestor1);
             vista4.recibirCadenaCompra(vista3.entregarCadenaCompra());
             //solo es teferencia por si acaso no instnacia

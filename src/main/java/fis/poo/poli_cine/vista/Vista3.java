@@ -112,7 +112,7 @@ public class Vista3 extends javax.swing.JFrame {
         return this.listaTicketsVendidos;
     }
     
-    
+    //pasar a factura
     public void listenerPasarAFacturacion(java.awt.event.ActionListener accion){
         jButton12.addActionListener(accion);
     }
@@ -132,19 +132,42 @@ public class Vista3 extends javax.swing.JFrame {
     public Boolean validarQueDebeHaberPorLoMenosUno(){
         
         for(Funcion a:cinegestor1.retornarListaFunciones()){
+            
             if(a==funcionEscogida){
                 for(Asiento as: a.retornarSala().retornarListaAsientos()){
                     if(as.retornarDisponibilidad()==false){
-                    return true;
+                        return true;
+                        }
                     }
                 }
             }
             
-        
+           return false; 
         }
 
-       return false;
-    }
+    
+
+    public Boolean validarQueDebeHaberPorLoMenosUno2(){
+        
+        for(Funcion a:cinegestor1.retornarListaFunciones()){
+            
+            if(a==funcionEscogida){
+                for(Asiento as: a.retornarSala().retornarListaAsientos()){
+                    if(as.retornarDisponibilidad()==false){
+                        if(jTextField1.getText().equals("")){
+                            return false;
+                        }else{
+                        return true;
+                        }
+                        }
+                    }
+                }
+            }
+            
+           return false; 
+        }
+
+    
     
     
     //bueno aqui gestiono para que se no se muestren como comprados al usuario, solo le aparezcan los que si compra y no anteriores
@@ -442,6 +465,7 @@ public class Vista3 extends javax.swing.JFrame {
         jButton10.addActionListener(this::jButton10ActionPerformed);
 
         jButton12.setText("Siguiente");
+        jButton12.addActionListener(this::jButton12ActionPerformed);
 
         jLabel5.setBackground(new java.awt.Color(153, 153, 153));
         jLabel5.setFont(new java.awt.Font("Noto Sans CJK KR Light", 0, 24)); // NOI18N
@@ -850,6 +874,10 @@ public class Vista3 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
